@@ -1,0 +1,15 @@
+@use "sass:math";
+
+// ===================================================
+// FUNCTIONS - HÀM TÍNH TOÁN TRONG SASS
+// ===================================================
+
+// Hàm chuyển đổi px sang rem chuẩn
+@function to-rem($px, $base: 16px) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// Hàm tính phần trăm độ rộng cột lưới
+@function grid-percent($columns, $total: 12) {
+  @return math.percentage(math.div($columns, $total));
+}

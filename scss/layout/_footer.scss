@@ -1,0 +1,138 @@
+// ===================================================
+// BÀI TẬP 4: DỰNG PHẦN FOOTER CỦA LANDING PAGE
+// Áp dụng Grid Layout, Nesting, Variables và Responsive Mixins
+// ===================================================
+
+.footer {
+  background-color: $dark-bg;
+  color: $text-light;
+  padding: 80px 0 30px;
+  position: relative;
+  border-top: 1px solid rgba($white, 0.05);
+
+  .footer-grid {
+    @include grid-layout(4, 40px);
+    margin-bottom: 60px;
+
+    @include respond-to("lg") {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    @include respond-to("sm") {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  .footer-col {
+    .footer-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: $white;
+      margin-bottom: 16px;
+      display: inline-block;
+
+      span {
+        color: $primary-color;
+      }
+    }
+
+    .footer-desc {
+      font-size: 14px;
+      color: $text-light;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .footer-title {
+      color: $white;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 35px;
+        height: 2px;
+        background-color: $primary-color;
+      }
+    }
+
+    .footer-links {
+      li {
+        margin-bottom: 12px;
+
+        a {
+          color: $text-light;
+          font-size: 14px;
+          transition: $transition-default;
+          display: inline-flex;
+          align-items: center;
+
+          &:hover {
+            color: $white;
+            transform: translateX(4px);
+          }
+        }
+      }
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+
+      input {
+        background-color: $dark-surface;
+        border: 1px solid rgba($white, 0.1);
+        border-radius: $border-radius-sm;
+        padding: 10px 14px;
+        color: $white;
+        font-size: 13px;
+        width: 100%;
+        outline: none;
+
+        &:focus {
+          border-color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba($white, 0.08);
+    padding-top: 25px;
+    @include flex-layout(space-between, center, row);
+    font-size: 13px;
+
+    @include respond-to("sm") {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+
+    p {
+      color: $text-light;
+      margin: 0;
+    }
+
+    .social-links {
+      @include flex-layout(flex-end, center, row, 15px);
+
+      a {
+        color: $text-light;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

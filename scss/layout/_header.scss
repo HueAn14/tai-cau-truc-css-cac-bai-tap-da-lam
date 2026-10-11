@@ -1,0 +1,118 @@
+// ===================================================
+// BÀI TẬP 1: NAVIGATION & HEADER CỦA LANDING PAGE
+// Áp dụng Nesting, Variables và Flexbox Mixins
+// ===================================================
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba($white, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: $shadow-sm;
+  transition: $transition-default;
+
+  .nav-container {
+    @include flex-layout(space-between, center, row);
+    padding: 16px 20px;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: $primary-color;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    span {
+      color: $text-main;
+    }
+  }
+
+  .nav-menu {
+    @include flex-layout(center, center, row, 30px);
+
+    @include respond-to("md") {
+      display: none; // Ẩn trên mobile để tối ưu
+    }
+
+    .nav-item {
+      .nav-link {
+        font-size: 15px;
+        font-weight: 500;
+        color: $text-muted;
+        transition: $transition-default;
+        position: relative;
+
+        &:hover,
+        &.active {
+          color: $primary-color;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: $primary-color;
+          transition: width 0.25s ease;
+        }
+
+        &:hover::after,
+        &.active::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .nav-actions {
+    @include flex-layout(flex-end, center, row, 12px);
+  }
+}
+
+// Hero Section
+.hero-section {
+  background: linear-gradient(135deg, $dark-bg 0%, #1e1b4b 50%, $dark-surface 100%);
+  color: $white;
+  padding: 100px 0 90px;
+  position: relative;
+  overflow: hidden;
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+      color: $white;
+      font-size: $font-size-h1;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+
+      .highlight {
+        background: linear-gradient(to right, #60a5fa, #a855f7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    p {
+      color: #cbd5e1;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      @include flex-layout(center, center, row, 16px);
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Bài tập] Tái cấu trúc mã CSS của các bài tập đã làm (Landing Page) - CodeGym</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Style bổ sung cho các khối đồ họa SVG minh họa trong sản phẩm và hero */
+    .hero-mockup {
+      margin-top: 50px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+    .mockup-inner {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .mockup-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #e2e8f0;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .mockup-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    /* Style khung phân tích kỹ thuật CodeGym */
+    .analysis-container {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 35px 30px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+      margin-top: 40px;
+    }
+    .analysis-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .analysis-table th, .analysis-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border: 1px solid #e2e8f0;
+      font-size: 14px;
+    }
+    .analysis-table th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .tech-pill {
+      background: #eff6ff;
+      color: #2563eb;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .product-svg-thumb {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================
+       PHẦN 1: BÀI TẬP DỰNG NAVIGATION VÀ HEADER LANDING PAGE
+       ======================================================== -->
+  <header>
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          ⚡ Nova<span>Brand</span>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#home" class="nav-link active">Trang chủ</a></li>
+          <li class="nav-item"><a href="#products" class="nav-link">Sản phẩm nổi bật</a></li>
+          <li class="nav-item"><a href="#stats" class="nav-link">Số liệu thống kê</a></li>
+          <li class="nav-item"><a href="#analysis" class="nav-link">Báo cáo SASS</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Liên hệ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#products" class="btn btn--sm">Khám phá ngay</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section Banner -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1>
+            Kiến Tạo Trải Nghiệm Số <br>
+            <span class="highlight">Hiện Đại, Tối Ưu & Đột Phá</span>
+          </h1>
+          <p>
+            Landing Page mẫu hoàn chỉnh được tái cấu trúc từ các bài tập CodeGym. 
+            Ứng dụng sức mạnh của SASS (SCSS) với kiến trúc 7-1, Variables, Mixins và Nesting chuyên nghiệp.
+          </p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn--lg">Xem sản phẩm nổi bật</a>
+            <a href="#analysis" class="btn btn--outline btn--lg">Xem so sánh SASS vs CSS</a>
+          </div>
+
+          <!-- Mockup minh họa -->
+          <div class="hero-mockup">
+            <div class="mockup-inner">
+              <div class="mockup-badge">
+                <div class="mockup-icon" style="background: rgba(37, 99, 235, 0.2); color: #60a5fa;">🎨</div>
+                <div>100% SASS Modular<br><small style="color: #94a3b8; font-weight: 400;">Kiến trúc 7-1 chuẩn</small></div>
+              </div>
+              <div class="mockup-badge">
+                <div class="mockup-icon" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">⚡</div>
+                <div>Variables & Mixins<br><small style="color: #94a3b8; font-weight: 400;">Không lặp lại code</small></div>
+              </div>
+              <div class="mockup-badge">
+                <div class="mockup-icon" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">📱</div>
+                <div>Responsive Mobile<br><small style="color: #94a3b8; font-weight: 400;">Co giãn mọi thiết bị</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+
+  <!-- ========================================================
+       PHẦN 2: BÀI TẬP DỰNG PHẦN SẢN PHẨM NỔI BẬT LANDING PAGE
+       ======================================================== -->
+  <section class="section section--light" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Featured Products</span>
+        <h2 class="section-title">Sản Phẩm Công Nghệ Nổi Bật</h2>
+        <p class="section-subtitle">
+          Khám phá danh mục giải pháp cao cấp được khách hàng yêu thích nhất trong năm nay.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Sản phẩm 1 -->
+        <article class="product-card">
+          <div class="product-image-wrapper">
+            <div class="product-svg-thumb" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white;">
+              💻
+            </div>
+            <span class="badge-label badge-label--hot">Bán chạy nhất</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Phần Mềm Doanh Nghiệp</span>
+            <h3 class="product-title">Nova Cloud ERP Suite</h3>
+            <p class="product-desc">
+              Hệ thống quản trị tài chính, nhân sự và chuỗi cung ứng đồng bộ trên nền tảng điện toán đám mây.
+            </p>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="current-price">12.500.000₫</span>
+                <span class="old-price">15.000.000₫</span>
+              </div>
+              <button class="btn btn--sm">Mua ngay</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sản phẩm 2 -->
+        <article class="product-card">
+          <div class="product-image-wrapper">
+            <div class="product-svg-thumb" style="background: linear-gradient(135deg, #10b981, #047857); color: white;">
+              🚀
+            </div>
+            <span class="badge-label badge-label--new">Mới ra mắt</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">Giải Pháp Marketing</span>
+            <h3 class="product-title">AI Automation Growth</h3>
+            <p class="product-desc">
+              Tự động hóa tiếp cận khách hàng tiềm năng, cá nhân hóa nội dung qua trợ lý AI thông minh thế hệ mới.
+            </p>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="current-price">8.900.000₫</span>
+                <span class="old-price">10.500.000₫</span>
+              </div>
+              <button class="btn btn--sm">Mua ngay</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sản phẩm 3 -->
+        <article class="product-card">
+          <div class="product-image-wrapper">
+            <div class="product-svg-thumb" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white;">
+              🛡️
+            </div>
+            <span class="badge-label">Bảo mật cao cấp</span>
+          </div>
+          <div class="product-body">
+            <span class="product-category">An Ninh Mạng</span>
+            <h3 class="product-title">Shield Cyber Defender</h3>
+            <p class="product-desc">
+              Giải pháp phòng chống tấn công mạng, sao lưu đám mây thời gian thực và mã hóa dữ liệu đầu cuối.
+            </p>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="current-price">6.200.000₫</span>
+                <span class="old-price">7.800.000₫</span>
+              </div>
+              <button class="btn btn--sm">Mua ngay</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================
+       PHẦN 3: BÀI TẬP DỰNG PHẦN SỐ LIỆU THỐNG KÊ LANDING PAGE
+       ======================================================== -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">👥</div>
+          <div class="stat-number">15,000+</div>
+          <div class="stat-label">Khách hàng tin cậy</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-number">98.5%</div>
+          <div class="stat-label">Hài lòng dịch vụ</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-number">250+</div>
+          <div class="stat-label">Dự án hoàn thành</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon">🕒</div>
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Hỗ trợ kỹ thuật</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================
+       PHẦN TỔNG KẾT & PHÂN TÍCH TÁI CẤU TRÚC SASS
+       ======================================================== -->
+  <section class="section" id="analysis">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">CodeGym Technical Review</span>
+        <h2 class="section-title">Báo Cáo Tái Cấu Trúc Mã CSS Sang SASS</h2>
+        <p class="section-subtitle">
+          Tổng hợp chi tiết các tính năng SASS đã áp dụng vào 4 bài tập giao diện Landing Page.
+        </p>
+      </div>
+
+      <div class="analysis-container">
+        <table class="analysis-table">
+          <thead>
+            <tr>
+              <th>Tính năng SASS</th>
+              <th>Mục đích sử dụng</th>
+              <th>Ví dụ cụ thể trong dự án</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Variables (Biến)</strong></td>
+              <td>Quản lý tập trung toàn bộ màu sắc, kích thước font chữ, khoảng cách, bo góc và bóng đổ.</td>
+              <td><span class="tech-pill">$primary-color: #2563eb</span>, <span class="tech-pill">$font-size-h1: 42px</span>, <span class="tech-pill">$shadow-md</span></td>
+            </tr>
+            <tr>
+              <td><strong>Nesting (Lồng nhau)</strong></td>
+              <td>Phản ánh trực quan phân cấp cây DOM, giúp mã nguồn gọn gàng và tránh đặt tên class quá dài.</td>
+              <td><span class="tech-pill">.navbar { .logo { ... } .nav-menu { .nav-item { ... } } }</span></td>
+            </tr>
+            <tr>
+              <td><strong>Mixins (Tái sử dụng)</strong></td>
+              <td>Đóng gói các đoạn CSS thường xuyên lặp lại: Flexbox, Grid layout, kiểu dáng nút bấm, hiệu ứng card.</td>
+              <td><span class="tech-pill">@mixin flex-layout</span>, <span class="tech-pill">@mixin button-theme</span>, <span class="tech-pill">@mixin card-theme</span></td>
+            </tr>
+            <tr>
+              <td><strong>Media Queries Mixin</strong></td>
+              <td>Hỗ trợ responsive mượt mà trên mọi kích cỡ màn hình chỉ bằng một dòng lệnh include.</td>
+              <td><span class="tech-pill">@include respond-to("md") { ... }</span>, <span class="tech-pill">@include respond-to("sm")</span></td>
+            </tr>
+            <tr>
+              <td><strong>Kiến trúc SASS 7-1</strong></td>
+              <td>Tách mã thành các thư mục chuyên biệt: abstracts, base, layout, components.</td>
+              <td>Tổ chức 11 file partials <span class="tech-pill">_variables.scss</span>, <span class="tech-pill">_header.scss</span>...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================
+       PHẦN 4: BÀI TẬP DỰNG PHẦN FOOTER CỦA LANDING PAGE
+       ======================================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Cột 1: Thông tin công ty -->
+        <div class="footer-col">
+          <a href="#" class="footer-logo">⚡ Nova<span>Brand</span></a>
+          <p class="footer-desc">
+            Tiên phong cung cấp các giải pháp công nghệ số và phần mềm doanh nghiệp chất lượng cao, tối ưu hóa quy trình kinh doanh.
+          </p>
+        </div>
+
+        <!-- Cột 2: Sản phẩm -->
+        <div class="footer-col">
+          <h4 class="footer-title">Sản Phẩm</h4>
+          <ul class="footer-links">
+            <li><a href="#products">Nova Cloud ERP</a></li>
+            <li><a href="#products">AI Automation Growth</a></li>
+            <li><a href="#products">Shield Cyber Defender</a></li>
+            <li><a href="#products">Data Intelligence Suite</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột 3: Liên kết nhanh -->
+        <div class="footer-col">
+          <h4 class="footer-title">Hỗ Trợ</h4>
+          <ul class="footer-links">
+            <li><a href="#">Trung tâm trợ giúp</a></li>
+            <li><a href="#">Tài liệu hướng dẫn (Docs)</a></li>
+            <li><a href="#">Chính sách bảo mật</a></li>
+            <li><a href="#">Điều khoản sử dụng</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột 4: Đăng ký nhận tin -->
+        <div class="footer-col">
+          <h4 class="footer-title">Đăng Ký Nhận Tin</h4>
+          <p class="footer-desc">Nhận thông tin cập nhật sản phẩm và ưu đãi công nghệ mới nhất.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký nhận tin!');">
+            <input type="email" placeholder="Nhập email của bạn..." required>
+            <button type="submit" class="btn btn--sm">Gửi</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 NovaBrand. Thiết kế & Tái cấu trúc bằng SASS theo chương trình CodeGym.</p>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Twitter</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

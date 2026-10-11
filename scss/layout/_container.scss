@@ -1,0 +1,26 @@
+// ===================================================
+// CONTAINER & SECTION LAYOUT
+// ===================================================
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section {
+  padding-top: $spacing-xl;
+  padding-bottom: $spacing-xl;
+
+  &--light {
+    background-color: $light-bg;
+  }
+
+  &--dark {
+    background-color: $dark-bg;
+    color: $white;
+  }
+}

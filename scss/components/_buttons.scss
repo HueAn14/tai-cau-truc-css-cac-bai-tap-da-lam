@@ -1,0 +1,49 @@
+// ===================================================
+// BUTTONS COMPONENT
+// Tái cấu trúc nút bấm sử dụng Button Mixin
+// ===================================================
+
+.btn {
+  @include button-theme($primary-color, $white, $primary-dark);
+
+  &--secondary {
+    @include button-theme($secondary-color, $white, #0284c7);
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $white;
+    border: 1px solid rgba($white, 0.4);
+
+    &:hover {
+      background-color: rgba($white, 0.1);
+      border-color: $white;
+      color: $white;
+    }
+  }
+
+  &--outline-dark {
+    background-color: transparent;
+    color: $text-main;
+    border: 1px solid $border-color;
+
+    &:hover {
+      background-color: $light-bg;
+      border-color: $text-muted;
+    }
+  }
+
+  &--sm {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  &--lg {
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+
+  &--full {
+    width: 100%;
+  }
+}

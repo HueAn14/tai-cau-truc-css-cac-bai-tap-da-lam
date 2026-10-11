@@ -1,0 +1,23 @@
+// ===================================================
+// MAIN SASS ENTRY POINT - KIẾN TRÚC 7-1 CHUẨN
+// Dự án: Tái cấu trúc mã CSS của các bài tập đã làm (Landing Page)
+// ===================================================
+
+// 1. Abstracts (Biến, hàm toán học, mixins)
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// 2. Base (Reset, typography)
+@import 'base/reset';
+@import 'base/typography';
+
+// 3. Layout (Khung container, header, footer)
+@import 'layout/container';
+@import 'layout/header';
+@import 'layout/footer';
+
+// 4. Components (Buttons, sản phẩm nổi bật, số liệu thống kê)
+@import 'components/buttons';
+@import 'components/products';
+@import 'components/stats';

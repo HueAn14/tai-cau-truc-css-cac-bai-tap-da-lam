@@ -1,0 +1,76 @@
+// ===================================================
+// MIXINS - CÁC KHỐI THUỘC TÍNH TÁI SỬ DỤNG
+// ===================================================
+
+// Mixin Flexbox đa năng
+@mixin flex-layout($justify: flex-start, $align: center, $direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+// Mixin CSS Grid linh hoạt
+@mixin grid-layout($columns: 3, $gap: 24px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// Mixin định kiểu nút bấm tái sử dụng
+@mixin button-theme($bg-color: $primary-color, $text-color: $white, $hover-bg: $primary-dark) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 12px 28px;
+  border-radius: $border-radius-sm;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: $transition-default;
+
+  &:hover {
+    background-color: $hover-bg;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Mixin định kiểu Card hộp
+@mixin card-theme($bg: $white, $padding: 24px, $radius: $border-radius-md, $shadow: $shadow-md) {
+  background-color: $bg;
+  padding: $padding;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  border: 1px solid $border-color;
+  transition: $transition-default;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+    transform: translateY(-5px);
+  }
+}
+
+// Mixin Media Query Responsive
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "sm" {
+    @media (max-width: #{$breakpoint-sm}) { @content; }
+  } @else if $breakpoint == "md" {
+    @media (max-width: #{$breakpoint-md}) { @content; }
+  } @else if $breakpoint == "lg" {
+    @media (max-width: #{$breakpoint-lg}) { @content; }
+  } @else if $breakpoint == "xl" {
+    @media (max-width: #{$breakpoint-xl}) { @content; }
+  }
+}
